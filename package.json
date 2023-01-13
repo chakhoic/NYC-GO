@@ -1,0 +1,40 @@
+{
+  "name": "nyc-go",
+  "version": "1.0.0",
+  "description": "The title of this project \"NYC-GO!\" was inspired by a popular mobile phone game  \"Pokemon GO!\". The idea behind Pokemon Go was to have people go outside and  catch difference pokemon whilst exploriing different places. My project NYC-GO!  is also aim to make people go outside of their house and explore the city more.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakhoic/NYC-GO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chakhoic/NYC-GO/issues"
+  },
+  "homepage": "https://github.com/chakhoic/NYC-GO#readme",
+  "dependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "core-js": "^3.27.1",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.2",
+    "regenerator-runtime": "^0.13.11",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "browserlist": [
+    "defaults"
+  ]
+}
+ 
+
