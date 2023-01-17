@@ -1,8 +1,8 @@
-import Example from './scripts/example';
+import Map from './scripts/map.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.querySelector('#root')
+    // const root = document.querySelector('#')
     // console.log('hello world')
 
-    new Example(root);
+    const map = new Map ();
 }) 
