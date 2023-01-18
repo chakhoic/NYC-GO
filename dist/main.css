@@ -1,4 +1,88 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+html,
+body {
+  height: 100%;
+  background-image: url("./img/ari.jpeg");
+  background-size: cover;
+}
 
+#top_nav {
+  padding: 10px 0;
+  height: 50px;
+}
+
+#main_title {
+  text-align: center;
+  height: 10px;
+}
+
+#nav1 {
+  display: block;
+  width: 5px;
+}
+
+#git {
+  height: 35px;
+  width: 35px;
+}
+
+#main_title h1 {
+  padding: -1em;
+  color: white;
+  margin-bottom: 1px;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+#main_title p {
+  color: white;
+  margin-bottom: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+#main_section {
+  border-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  height: 100%;
+}
+
+#left_filter {
+  border: 10px;
+  color: white;
+  font-size: 25px;
+  flex-grow: 1;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.462745098);
+}
+
+#coney {
+  padding: 0.5em;
+  height: 400px;
+  width: 390px;
+}
+
+#middle_content {
+  flex-grow: 3;
+}
+
+#right_content {
+  font-size: 20px;
+  color: white;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.5em;
+  background: rgba(0, 0, 0, 0.462745098);
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}

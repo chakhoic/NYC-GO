@@ -7,22 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./dist/main.css" />
-    <script src="./dist/main.js"></script>
+    <script src="./dist/main.js" defer></script>
     <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet"> 
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWciF7jUMG9a1D8NUNqzDHTB7Wlpdu-E&callback=initMap&v=weekly"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWciF7jUMG9a1D8NUNqzDHTB7Wlpdu-E&callback=initMap&v=weekly" defer></script>
 
 </head>
 
-<body>
+<body id="background"style="background-image: url('./src/img/ari.jpeg');">
+    <header>
+                <a href="https://github.com/chakhoic/NYC-GO" target="_blank"><img id="git" src="./src/img/git.png"></a>
+    </header>
     <div id="top_nav">
         <div id="main_title">
-            <h1>NYC-GO!</h1>
-            <p>WE OUTSIDE!!!</p>
+            <h1>NYC-GO</h1>
+            <p>GOTTA SEE 'EM ALL! ™</p>
         </div>
     </div>
     <div id="main_section">
         <div id="left_filter">
-            filters
+            Filters:
             <form id="myForm">
                 <label for="party">Party Size:</label>
                 <select name="party" id="party">
@@ -32,8 +35,9 @@
                 <br>
                 <label for="type">Type:</label>
                 <select name="type" id="type">
-                    <option value="type1">Type1</option>
-                    <option value="type2">Type2</option>
+                    <option value="type1">Cultural</option>
+                    <option value="type2">Tourist</option>
+                    <option value="type3">Food/Drink</option>
                 </select>
                 <br>
                 <label for="price">Price:</label>
@@ -43,26 +47,30 @@
                     <option value="$$">$$$</option>
                 </select>
                 <br>
-                <input type='checkbox' value='1' name='seasonal'>
-                <label for="seasonal">Seasonal</label>
-                <br>
                 <input type="submit" value="Submit">
             </form>
+            <img id="coney" src="./src/img/11.jpg">
         </div>
         <div id="middle_content">
             <div id="map"></div>
-
-            <!-- 
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises
-      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-      -->
-        </div>
         <div id="right_content">
-            descirption / details
+            <ul>Details:
+                <li id="list-name">
+                    Name?
+                </li>
+                <li id="list-type">
+                    Type?
+                </li>
+                <li id="list-price">
+                    Price?
+                </li>
+                <li id="list-party">
+                    Party Size?
+                </li>
+            </ul>    
         </div>
     </div>
+
 </body>
 
 </html>
