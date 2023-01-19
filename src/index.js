@@ -1,11 +1,146 @@
 // import Map from './scripts/map.js';
 import { myfunction } from "./scripts/pin";
+import { typeFilter } from "./scripts/typefilter.js"
+import { priceFilter } from "./scripts/pricefilter.js"
+import { partyFilter } from "./scripts/partyfilter.js"
 
 document.addEventListener('DOMContentLoaded', () => {
     // const root = document.querySelector('#')
     // console.log('hello world')
 
+
+    const opts = document.querySelectorAll("select")
+
+    console.log(opts)
+
+    for (let i = 0; i < opts.length; i++) {
+        opts[i].addEventListener('change', initMap)
+    }
+
     // const map = new Map ();
+    const details = {
+        "Time Square": {
+            "type": "Tourist",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "The High Line": {
+            "type": "Tourist",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Hudson River Park": {
+            "type": "Cultural",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Empire State Building": {
+            "type": "Tourist",
+            "price": "$$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Koreatown": {
+            "type": "Food/Drink",
+            "price": "$$",
+            "party": "Travel With Friends",
+            "seasonal": "no",
+        },
+
+        "Chinatown": {
+            "type": "Food/Drink",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Central Park": {
+            "type": "Cultural",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "The Vessel": {
+            "type": "Tourist",
+            "price": "$$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Metropolitan Museum of Art": {
+            "type": "Cultural",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Museum of Modern Art": {
+            "type": "Cultural",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Chelsea Market": {
+            "type": "Food/Drink",
+            "price": "$$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "St Marks Place": {
+            "type": "Food/Drink",
+            "price": "$$",
+            "party": "Travel With Friends",
+            "seasonal": "no",
+        },
+
+        "Madison Square Garden": {
+            "type": "Tourist",
+            "price": "$$$",
+            "party": "Travel With Friends",
+            "seasonal": "yes",
+        },
+
+        "Rockefella Center": {
+            "type": "Tourist",
+            "price": "$$",
+            "party": "Solo Advanture",
+            "seasonal": "yes",
+        },
+
+        "Little Italy": {
+            "type": "Food/Drink",
+            "price": "$$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "Little Island": {
+            "type": "Tourist",
+            "price": "$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+        "SOHO": {
+            "type": "Tourist",
+            "price": "$$",
+            "party": "Solo Advanture",
+            "seasonal": "no",
+        },
+
+
+    }
+
     let locations = [
         ['Time Square', 40.758896, -73.985130, 19],
         ['Empire State Building', 40.748817, -73.985428, 3],
@@ -27,9 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ];
 
-    const f = document.getElementById('myForm');
-
-
+    const touristtype = locations.map(ele => ele[0])
     // f.addEventListener("submit", function (event) {
     //     event.preventDefault();
     //     locations.splice(0, 1);
@@ -38,10 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //     initMap()
     // });
 
-        locations.splice(0, 1);
-        console.log(locations);
-        // window.initMap = initMap;
-        initMap()
+    // locations.splice(0, 1);
+    // window.initMap = initMap;
+    // initMap()
 
 
     function initMap() {
@@ -51,24 +183,41 @@ document.addEventListener('DOMContentLoaded', () => {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
+        const party = document.getElementById("party")
+        const party_size = party.options[party.selectedIndex].value
+        const type = document.getElementById("type")
+        const type_size = type.options[type.selectedIndex].value
+        const price = document.getElementById("price")
+        const price_size = price.options[price.selectedIndex].value
+        
+        let filtered1 = typeFilter(details, touristtype, type_size)
+        let filtered2 = priceFilter(details, filtered1, price_size)
+        let filtered3 = partyFilter(details, filtered2, party_size)
+        let locations_filtered = locations.filter(ele => filtered3.includes(ele[0]))
+
+
+        const f = document.getElementById('myForm');
+
+
         var infowindow = new google.maps.InfoWindow();
 
         var marker, i;
 
-        for (i = 0; i < locations.length; i++) {
+        for (i = 0; i < locations_filtered.length; i++) {
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                position: new google.maps.LatLng(locations_filtered[i][1], locations_filtered[i][2]),
                 map: map
             });
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
-                    infowindow.setContent(locations[i][0]);
+                    infowindow.setContent(locations_filtered[i][0]);
                     infowindow.open(map, marker);
                     myfunction()
                 }
             })(marker, i));
         }
     }
-    // window.initMap = initMap;s
+    window.initMap = initMap;
+    // initMap();
 }) 
