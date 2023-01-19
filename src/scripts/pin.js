@@ -27,8 +27,7 @@
 // export
 
 export function myfunction() {
-    const met = document.querySelector("[coords='13,0,4,3.5,0,12,2.75,21,13,37,23.5,21,26,12,22,3.5']").parentElement.parentElement;
-    console.log(met)
+    const met = document.querySelector("gmimap")
     // const central = document.querySelector("#gmimap3")
     // const moma = document.querySelector("#gmimap6")
     // const vessel = document.querySelector("#gmimap4")

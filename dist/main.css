@@ -3,7 +3,7 @@
   \*************************************************************************************************************************************/
 html,
 body {
-  height: 100%;
+  height: fit-content;
   background-image: url("./img/ari.jpeg");
   background-size: cover;
 }
@@ -11,11 +11,12 @@ body {
 #top_nav {
   padding: 10px 0;
   height: 50px;
+  margin-bottom: 25px;
 }
 
 #main_title {
   text-align: center;
-  height: 10px;
+  height: 30px;
 }
 
 #nav1 {
@@ -24,6 +25,7 @@ body {
 }
 
 #git {
+  display: inline-block;
   height: 35px;
   width: 35px;
 }
@@ -32,7 +34,7 @@ body {
   padding: -1em;
   color: white;
   margin-bottom: 1px;
-  font-size: 45px;
+  font-size: 55px;
   font-weight: bold;
   font-family: "Pokemon Solid", sans-serif;
 }
@@ -46,7 +48,6 @@ body {
 }
 
 #main_section {
-  border-color: yellow;
   display: flex;
   justify-content: space-between;
   gap: 5px;
@@ -54,7 +55,7 @@ body {
 }
 
 #left_filter {
-  border: 10px;
+  border: 5px ridge gray;
   color: white;
   font-size: 25px;
   flex-grow: 1;
@@ -73,6 +74,7 @@ body {
 }
 
 #right_content {
+  border: 5px ridge gray;
   font-size: 20px;
   color: white;
   flex-grow: 1;
@@ -83,6 +85,7 @@ body {
 }
 
 #map {
+  border: 5px ridge gray;
   height: 500px;
   width: 100%;
 }
