@@ -11,7 +11,7 @@ body {
 #top_nav {
   padding: 10px 0;
   height: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 #main_title {
@@ -25,24 +25,28 @@ body {
 }
 
 #git {
-  display: inline-block;
+  border-radius: 15px;
+  border: 1px ridge white;
   height: 35px;
   width: 35px;
 }
 
 #main_title h1 {
+  text-shadow: 0 0 15px black, 0 0 15px black;
+  border: 1px black;
   padding: -1em;
   color: white;
   margin-bottom: 1px;
-  font-size: 55px;
+  font-size: 65px;
   font-weight: bold;
   font-family: "Pokemon Solid", sans-serif;
 }
 
 #main_title p {
+  text-shadow: 0 0 5px black, 0 0 5px black;
   color: white;
   margin-bottom: 1px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   font-family: "Pokemon Solid", sans-serif;
 }
@@ -61,12 +65,14 @@ body {
   flex-grow: 1;
   padding: 2em;
   background: rgba(0, 0, 0, 0.462745098);
+  margin-bottom: 10px;
+  font-family: "HISKYFLIPPERHI", sans-serif;
 }
 
 #coney {
   padding: 0.5em;
-  height: 400px;
-  width: 390px;
+  height: 450px;
+  width: 400px;
 }
 
 #middle_content {
@@ -74,14 +80,17 @@ body {
 }
 
 #right_content {
-  border: 5px ridge gray;
+  border: 5px white;
   font-size: 20px;
+  text-align: left;
   color: white;
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
   padding: 2.5em;
   background: rgba(0, 0, 0, 0.462745098);
+  background-size: 100% 100%;
+  font-family: "HISKYFLIPPERHI", sans-serif;
 }
 
 #map {

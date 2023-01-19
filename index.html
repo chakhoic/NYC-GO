@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js" defer></script>
     <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet"> 
+    <link href="https://fonts.cdnfonts.com/css/hiskyflipper" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWciF7jUMG9a1D8NUNqzDHTB7Wlpdu-E&callback=initMap&v=weekly" async defer></script>
         
 
@@ -26,7 +27,7 @@
     </div>
     <div id="main_section">
         <div id="left_filter">
-            Filters:
+            <h1>Filters</h1>
             <form id="myForm">
                 <label for="party">Party Size:</label>
                 <select name="party" id="party">
@@ -53,23 +54,24 @@
                 <br>
                 <!-- <button type="submit" >Submit</button> -->
             </form>
-            <img id="coney" src="./src/img/11.jpg">
+            <img id="coney" src="./src/img/boney.jpg">
         </div>
         <div id="middle_content">
             <div id="map"></div>
-        <div id="right_content">
-            <ul>Details:
+        <div id="right_content" style="background-image: url('./src/img/chat.png');">
+            
+            <ul>Details
                 <li id="list-name">
-                    Name?
+                    Name:
                 </li>
                 <li id="list-type">
-                    Type?
+                    Type:
                 </li>
                 <li id="list-price">
-                    Price?
+                    Price:
                 </li>
                 <li id="list-party">
-                    Party Size?
+                    Party Size:
                 </li>
             </ul>    
         </div>
