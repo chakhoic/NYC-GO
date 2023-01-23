@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ['Chinatown', 40.7177, -74.0015, 4],
         ['Central Park', 40.785091, -73.968285, 5],
         ['The Vessel', 40.753826, -74.002228, 2],
-        ['Metropolitan Museum of Art', 40.779434, -73.963402, 6],
+        ['Metropolitan Museum of Art', 40.979434, -73.933402, 6],
         ['Museum of Modern Art', 40.761509, -73.978271, 7],
         ['The High Line', 40.747993, -74.004890, 8],
         ['Chelsea Market', 40.742352, -74.006210, 9],
