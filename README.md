@@ -1,5 +1,7 @@
 # NYC-GO!
 
+Live link: https://chakhoic.github.io/NYC-GO/
+
 The title of this project "NYC-GO!" was inspired by a popular mobile phone game 
 "Pokemon GO!". The idea behind Pokemon Go was to have people go outside and 
 catch difference pokemon whilst exploriing different places. My project NYC-GO! 
