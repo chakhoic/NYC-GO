@@ -5,88 +5,72 @@ import { priceFilter } from "./scripts/pricefilter.js"
 import { partyFilter } from "./scripts/partyfilter.js"
 
 document.addEventListener('DOMContentLoaded', () => {
-    // const root = document.querySelector('#')
-    // console.log('hello world')
-
 
     const opts = document.querySelectorAll("select")
-
-    console.log(opts)
 
     for (let i = 0; i < opts.length; i++) {
         opts[i].addEventListener('change', initMap)
     }
 
-    // const map = new Map ();
     const details = {
         "Time Square": {
             "type": "Tourist",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "The High Line": {
             "type": "Tourist",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Hudson River Park": {
             "type": "Cultural",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Empire State Building": {
             "type": "Tourist",
             "price": "$$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Koreatown": {
             "type": "Food/Drink",
             "price": "$$",
             "party": "Travel With Friends",
-            "seasonal": "no",
         },
 
         "Chinatown": {
             "type": "Food/Drink",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Central Park": {
             "type": "Cultural",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "The Vessel": {
             "type": "Tourist",
             "price": "$$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Metropolitan Museum of Art": {
             "type": "Cultural",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Museum of Modern Art": {
             "type": "Cultural",
             "price": "$",
             "party": "Solo Advanture",
-            "seasonal": "no",
         },
 
         "Chelsea Market": {
@@ -163,17 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const touristtype = locations.map(ele => ele[0])
-    // f.addEventListener("submit", function (event) {
-    //     event.preventDefault();
-    //     locations.splice(0, 1);
-    //     console.log(locations);
-    //     // window.initMap = initMap;
-    //     initMap()
-    // });
 
-    // locations.splice(0, 1);
-    // window.initMap = initMap;
-    // initMap()
+    // map
 
 
     function initMap() {
@@ -219,5 +194,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     window.initMap = initMap;
-    // initMap();
 }) 

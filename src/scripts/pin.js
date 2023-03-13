@@ -1,6 +1,7 @@
+// show pin detail (not working)
+
 export function myfunction() {
     const met = document.querySelector("#gmimap6")
-    // const central = document.querySelector("#gmimap4")
     const moma = document.querySelector("#gmimap7")
     const vessel = document.querySelector("#gmimap5")
     const msg = document.querySelector("#gmimap12")
@@ -42,17 +43,6 @@ export function myfunction() {
 
     })
 
-    // central.addEventListener("click", function () {
-    //     document.querySelector('#list-name').innerText =
-    //         "Name? Central Park"
-    //     document.querySelector('#list-type').innerText =
-    //         "Type? Cultural"
-    //     document.querySelector('#list-price').innerText =
-    //         "Price? $"
-    //     document.querySelector('#list-party').innerText =
-    //         "PartySize? Solo Adventure"
-
-    // })
 
     moma.addEventListener("click", function () {
         document.querySelector('#list-name').innerText =
