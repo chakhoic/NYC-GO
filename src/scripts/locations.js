@@ -1,0 +1,20 @@
+export let locations = [
+    ['Time Square', 40.758896, -73.985130],
+    ['Empire State Building', 40.748817, -73.985428],
+    ['Koreatown', 40.748817, -73.9755],
+    ['Chinatown', 40.7177, -74.0015],
+    ['Central Park', 40.785091, -73.968285],
+    ['The Vessel', 40.753826, -74.002228],
+    ['Metropolitan Museum of Art', 40.979434, -73.933402],
+    ['Museum of Modern Art', 40.761509, -73.978271],
+    ['The High Line', 40.747993, -74.004890],
+    ['Chelsea Market', 40.742352, -74.006210],
+    ['Hudson River Park', 40.729563, -74.012699],
+    ['St Marks Place', 40.7235, -73.9852],
+    ['Madison Square Garden', 40.750298, -73.993324],
+    ['Rockefella Center', 40.758678, -73.978798],
+    ['Little Italy', 40.719141, -73.997327],
+    ['Little Island', 40.7421, -74.0100],
+    ['SOHO', 40.7246, -74.0019],
+
+];
