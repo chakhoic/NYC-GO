@@ -1,5 +1,4 @@
-// import Map from './scripts/map.js';
-import { myfunction } from "./scripts/pin";
+
 import { typeFilter } from "./scripts/typefilter.js"
 import { priceFilter } from "./scripts/pricefilter.js"
 import { partyFilter } from "./scripts/partyfilter.js"
@@ -194,4 +193,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     window.initMap = initMap;
-}) 
+
+    let filteredLocations = [];
+
+    const party = document.getElementById("party")
+    const type = document.getElementById("type")
+    const price = document.getElementById("price")
+  
+    function updateFilteredLocations() {
+        let filtered1 = typeFilter(details, touristtype, type.value);
+        let filtered2 = priceFilter(details, filtered1, price.value);
+        let filtered3 = partyFilter(details, filtered2, party.value);
+        filteredLocations = locations.filter(ele => filtered3.includes(ele[0]));
+        const select = document.getElementById("location-select");
+        select.innerHTML = "";
+        filteredLocations.forEach(location => {
+            const option = document.createElement("option");
+            option.value = location[0];
+            option.text = location[0];
+            select.appendChild(option);
+        });
+    }
+    
+    updateFilteredLocations();
+    
+    const locationSelect = document.getElementById("location-select");
+    locationSelect.addEventListener("change", () => {
+        const locationName = locationSelect.value;
+        const locationDetails = details[locationName];
+        document.getElementById("list-name").innerText = "Name: " + locationName;
+        document.getElementById("list-party").innerText = "Party Size: " + locationDetails["party"];
+        document.getElementById("list-type").innerText = "Type: " + locationDetails["type"];
+        document.getElementById("list-price").innerText = "Price: " + locationDetails["price"];
+    });    
+})
+
+
