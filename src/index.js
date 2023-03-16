@@ -1,4 +1,3 @@
-import { myfunction } from "./scripts/pin";
 import { typeFilter } from "./scripts/typefilter.js";
 import { priceFilter } from "./scripts/pricefilter.js";
 import { partyFilter } from "./scripts/partyfilter.js";
@@ -139,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 12,
       center: new google.maps.LatLng(40.776676, -73.971321),
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
     });
   
     const party = document.getElementById("party");
@@ -196,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
           return function () {
             infowindow.setContent(locations_filtered[i][0]);
             infowindow.open(map, marker);
-            myfunction();
           };
         })(marker, i)
       );
