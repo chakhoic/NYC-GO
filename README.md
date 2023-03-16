@@ -2,19 +2,18 @@
 
 Live link: https://chakhoic.github.io/NYC-GO/
 
-The title of this project "NYC-GO!" was inspired by a popular mobile phone game 
-"Pokemon GO!". The idea behind Pokemon Go was to have people go outside and 
-catch difference pokemon whilst exploriing different places. My project NYC-GO! 
-is also aim to make people go outside of their house and explore the city more.
+NYC-GO! is a project inspired by the wildly popular mobile game, Pokemon GO! The game's premise was simple: players were encouraged to go outside, explore their surroundings, and capture different Pokemon. Similarly, the goal of NYC-GO! is to inspire people to venture outside and experience everything that the city has to offer.
 
-One of the biggest reason why people stay at home instead of going outside is 
-because their friends are busy or they just simply doesn't have friends avalible.
-Therefore on the "NYC-GO!" page would have two button you can choose to filter
-activities that is good for one person or multiple people. There are critirias for
-which actitivity would be more suitable for one person. 
+One of the biggest obstacles to going out and exploring can be the lack of available companions. With this in mind, the NYC-GO! page features two filter options, allowing users to select activities that are ideal for either solo adventurers or groups. Certain criteria have been put in place to determine which activities are best suited for solo exploration.
 
-Fuctionality
+## How to use
 
-In this project I used the google map api. The google map api allow me render google map for the specific location and allow me to drop pins on the google map. Once you click on the pin it will show you the details of the activities. 
+  1. Use the filter options to find places in New York City that fit your criteria.
+  2. Select a filtered location from the drop-down menu to view details and its location on the map.
+  3. Enjoy your adventure!
+
+## Fuctionality
+
+To create NYC-GO, I utilized a variety of tools and technologies, including JavaScript, Webpack, npm, CSS, and SCSS. To filter the activities displayed on the page, I created three filters that are dependent on the last filter selected. These filters help users find the activities that best suit their needs, whether they are looking to explore the city on their own or with friends. To display the locations of the activities on a map, I used the Google Maps API to drop markers at each location. When a user clicks on a marker, they can see more information about the activity, including its name, description, and location. This functionality makes it easy for users to find and plan their ideal NYC adventure.
 
 
