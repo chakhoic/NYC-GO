@@ -5,6 +5,7 @@ html,
 body {
   height: fit-content;
   background-size: cover;
+  zoom: 95%;
 }
 
 #main_title {
@@ -19,26 +20,34 @@ body {
 
 #git {
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 10px;
   border-radius: 15px;
   border: 1px ridge white;
-  height: 32px;
-  width: 32px;
-  margin-top: 10px;
+  height: 35px;
+  width: 35px;
+  margin-top: 0px;
+  margin-left: 5px;
+}
+
+#git2 {
+  position: absolute;
+  top: 12px;
+  right: 55px;
+  height: 35px;
+  width: 35px;
+  margin-top: 2px;
   margin-left: 5px;
 }
 
 #info {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 10px;
   border-radius: 15px;
   border: 1px ridge white;
-  height: 27px;
-  width: 27px;
-  margin-top: 12px;
-  margin-left: 5px;
+  height: 30px;
+  width: 30px;
 }
 
 h1 {
@@ -98,17 +107,17 @@ p {
 }
 
 #middle_content {
-  flex-grow: 3;
+  flex-grow: 2;
 }
 
 #right_content {
-  border: 5px white;
-  font-size: 20px;
+  font-size: 27px;
   text-align: left;
   color: white;
   height: 100px;
+  width: 89%;
   justify-content: left;
-  padding: 2.5em;
+  padding: 2em;
   background: rgba(0, 0, 0, 0.462745098);
   background-size: 100% 100%;
   font-family: "HISKYFLIPPERHI", sans-serif;
@@ -117,7 +126,7 @@ p {
 #map {
   border: 5px ridge rgba(0, 128, 0, 0.522);
   height: 500px;
-  width: 100%;
+  width: 98%;
 }
 
 header {
