@@ -197,10 +197,38 @@ function initMap() {
   
     // Dropdown update code
     const locationSelect = document.getElementById("location-select");
+    locationSelect.addEventListener("change", () => {
+      updateMarkersBasedOnSelectedLocation();
+    });
+
     const selectedLocation = locationSelect.value;
     const locationDetails = details[selectedLocation];
     const isLocationSelectEvent = locationSelect === document.activeElement;
 
+    function updateMarkersBasedOnSelectedLocation() {
+      const locationSelect = document.getElementById("location-select");
+      const selectedLocation = locationSelect.value;
+    
+      if (selectedLocation === "all") {
+        // Show all markers if the selected option is "----"
+        const party = document.getElementById("party");
+        const party_size = party.options[party.selectedIndex].value;
+        const type = document.getElementById("type");
+        const type_size = type.options[type.selectedIndex].value;
+        const price = document.getElementById("price");
+        const price_size = price.options[price.selectedIndex].value;
+      
+        const touristtype = Object.keys(details);
+        let filtered1 = typeFilter(details, touristtype, type_size);
+        let filtered2 = priceFilter(details, filtered1, price_size);
+        let filtered3 = partyFilter(details, filtered2, party_size);
+        displayMarkers(filtered3);
+      } else {
+        // Show only the marker of the selected location
+        displayMarkers([selectedLocation]);
+      }
+    }
+    
   
     if (!isLocationSelectEvent) {
       // Clear the locationSelect dropdown
@@ -227,6 +255,7 @@ function initMap() {
     const deez = document.getElementById("deez");
     deez.innerHTML = `Details: ${locationDetails.lat}, ${locationDetails.lng}, ${locationDetails.type}, ${locationDetails.price}, ${locationDetails.party}`;
   
+    
   }
 
   function displayMarkers(locations) {
@@ -260,4 +289,6 @@ function initMap() {
     }
   }
   initMap();
+  // updateMarkersBasedOnSelectedLocation();
+
 };  

@@ -19,16 +19,18 @@
 <body id="background" style="background-image: url('./src/img/nyc.jpeg');">
     <header>
                 <a href="https://github.com/chakhoic/NYC-GO" target="_blank"><img id="git" src="./src/img/git.png"></a>
+                <a href="https://github.com/chakhoic/NYC-GO/blob/main/README.md" target="_blank"><img id="info" src="./src/img/pngegg.png"></a>
+
+                <div id="main_title">
+                    <h1>NYC-GO</h1>
+                <p>GOTTA SEE 'EM ALL! ™</p>
+            </div>
+
     </header>
-    <div id="top_nav">
-        <div id="main_title">
-            <h1>NYC-GO</h1>
-            <p>GOTTA SEE 'EM ALL! ™</p>
-        </div>
-    </div>
+
     <div id="main_section">
         <div id="left_filter">
-            <h1>Filters</h1>
+            <h2 id="fil">Filters</h2>
             <form id="myForm">
                 <label for="party">Party Size:</label>
                 <select name="party" id="party">
@@ -58,11 +60,12 @@
         </div>
         <div id="middle_content">
             <div id="map"></div>
-        <div id="right_content" >
+        <div id="right_content" style="background-image: url('./src/img/chat.png');">
             <label for="location-select">Select a location:</label>
             <select id="location-select">
                 ${locations.map(loc => `<option value="${loc[0]}"></option>`).join('')}
              </select>
+             <hr></hr>
                 <div id="deez">Details:</div>
         </div>
           

@@ -7,12 +7,6 @@ body {
   background-size: cover;
 }
 
-#top_nav {
-  padding: 10px 0;
-  height: 50px;
-  margin-bottom: 40px;
-}
-
 #main_title {
   text-align: center;
   height: 30px;
@@ -24,13 +18,30 @@ body {
 }
 
 #git {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   border-radius: 15px;
   border: 1px ridge white;
-  height: 35px;
-  width: 35px;
+  height: 32px;
+  width: 32px;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
-#main_title h1 {
+#info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 15px;
+  border: 1px ridge white;
+  height: 27px;
+  width: 27px;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+h1 {
   text-shadow: 0 0 15px black, 0 0 15px black;
   border: 1px black;
   padding: -1em;
@@ -41,7 +52,19 @@ body {
   font-family: "Pokemon Solid", sans-serif;
 }
 
-#main_title p {
+#fil {
+  text-shadow: 0 0 15px black, 0 0 15px black;
+  border: 1px black;
+  padding: -1em;
+  color: white;
+  margin-bottom: 1px;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 30px;
+}
+
+p {
   text-shadow: 0 0 5px black, 0 0 5px black;
   color: white;
   margin-bottom: 1px;
@@ -83,10 +106,8 @@ body {
   font-size: 20px;
   text-align: left;
   color: white;
-  height: 80px;
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
+  height: 100px;
+  justify-content: left;
   padding: 2.5em;
   background: rgba(0, 0, 0, 0.462745098);
   background-size: 100% 100%;
@@ -97,4 +118,14 @@ body {
   border: 5px ridge rgba(0, 128, 0, 0.522);
   height: 500px;
   width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 25px;
+  color: white;
+  margin-bottom: 45px;
 }
