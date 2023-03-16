@@ -1,13 +1,11 @@
-// import { typeFilter } from "./scripts/typefilter.js";
-// import { priceFilter } from "./scripts/pricefilter.js";
-// import { partyFilter } from "./scripts/partyfilter.js";
-
 document.addEventListener("DOMContentLoaded", () => {
     const opts = document.querySelectorAll("select");
   
     for (let i = 0; i < opts.length; i++) {
-      opts[i].addEventListener("change", initMap);
-    }
+        opts[i].addEventListener("change", () => {
+          initMap();
+        });
+      }
   
     const details = {
         "Time Square": {
@@ -176,35 +174,41 @@ function typeFilter(obj, arr, value) {
 
 
 function initMap() {
-    var map = new google.maps.Map(document.getElementById("map"), {
+    // Map initialization
+    window.map = new google.maps.Map(document.getElementById("map"), {
       zoom: 12,
       center: new google.maps.LatLng(40.776676, -73.971321),
       mapTypeId: google.maps.MapTypeId.HYBRID,
     });
-
+  
     const party = document.getElementById("party");
     const party_size = party.options[party.selectedIndex].value;
     const type = document.getElementById("type");
     const type_size = type.options[type.selectedIndex].value;
     const price = document.getElementById("price");
     const price_size = price.options[price.selectedIndex].value;
-
+  
     const touristtype = Object.keys(details);
     let filtered1 = typeFilter(details, touristtype, type_size);
     let filtered2 = priceFilter(details, filtered1, price_size);
     let filtered3 = partyFilter(details, filtered2, party_size);
+    displayMarkers(filtered3);
 
+  
+    // Dropdown update code
     const locationSelect = document.getElementById("location-select");
-
-    // Clear the existing options
+    const selectedLocation = locationSelect.value;
+    const locationDetails = details[selectedLocation];
+  
+    // Clear the locationSelect dropdown
     locationSelect.innerHTML = '';
-
+  
     // Add an 'All Locations' option
     const allOption = document.createElement("option");
     allOption.value = "all";
-    allOption.text = "All Locations";
+    allOption.text = "----";
     locationSelect.add(allOption);
-
+  
     // Add the filtered locations
     filtered3.forEach((loc) => {
       const option = document.createElement("option");
@@ -212,30 +216,42 @@ function initMap() {
       option.text = loc;
       locationSelect.add(option);
     });
+  
+    const deez = document.getElementById("deez");
+    deez.innerHTML = `Details: ${locationDetails.lat}, ${locationDetails.lng}, ${locationDetails.type}, ${locationDetails.price}, ${locationDetails.party}`;
+  
+  }
 
-    var infowindow = new google.maps.InfoWindow();
+  function displayMarkers(locations) {
+    // Clear existing markers before adding new ones
+    if (window.markers) {
+      for (let i = 0; i < window.markers.length; i++) {
+        window.markers[i].setMap(null);
+      }
+    }
 
-    var marker, i;
-
-    for (i = 0; i < filtered3.length; i++) {
-      const location = details[filtered3[i]];
-      marker = new google.maps.Marker({
+    window.markers = [];
+    for (let i = 0; i < locations.length; i++) {
+      const location = details[locations[i]];
+      const marker = new google.maps.Marker({
         position: new google.maps.LatLng(location.lat, location.lng),
-        map: map,
+        map: window.map,
       });
+
+      window.markers.push(marker);
 
       google.maps.event.addListener(
         marker,
         "click",
         (function (marker, i) {
           return function () {
-            infowindow.setContent(filtered3[i]);
-            infowindow.open(map, marker);
+            infowindow.setContent(locations[i]);
+            infowindow.open(window.map, marker);
           };
         })(marker, i)
       );
     }
   }
-
-  window.initMap = initMap;
-});
+  // Initialize the map when the DOM is loaded
+  initMap();
+});  

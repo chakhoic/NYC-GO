@@ -58,7 +58,7 @@ body {
 }
 
 #left_filter {
-  border: 5px ridge gray;
+  border: 5px ridge rgba(0, 128, 0, 0.522);
   color: white;
   font-size: 25px;
   flex-grow: 1;
@@ -83,7 +83,7 @@ body {
   font-size: 20px;
   text-align: left;
   color: white;
-  height: 70px;
+  height: 80px;
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
@@ -94,7 +94,7 @@ body {
 }
 
 #map {
-  border: 5px ridge gray;
+  border: 5px ridge rgba(0, 128, 0, 0.522);
   height: 500px;
   width: 100%;
 }

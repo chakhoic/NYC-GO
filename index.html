@@ -58,12 +58,12 @@
         </div>
         <div id="middle_content">
             <div id="map"></div>
-        <div id="right_content" style="background-image: url('./src/img/chat.png');">
+        <div id="right_content" >
             <label for="location-select">Select a location:</label>
             <select id="location-select">
                 ${locations.map(loc => `<option value="${loc[0]}"></option>`).join('')}
              </select>
-                <div>Details:</div>
+                <div id="deez">Details:</div>
         </div>
           
     </div>

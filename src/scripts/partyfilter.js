@@ -1,3 +1,8 @@
+// import { typeFilter } from "./scripts/typefilter.js";
+// import { priceFilter } from "./scripts/pricefilter.js";
+// import { partyFilter } from "./scripts/partyfilter.js";
+
+
 export function partyFilter(obj, arr, value) {
     if (value === "Default Party") {
         return arr;
