@@ -199,23 +199,30 @@ function initMap() {
     const locationSelect = document.getElementById("location-select");
     const selectedLocation = locationSelect.value;
     const locationDetails = details[selectedLocation];
+    const isLocationSelectEvent = locationSelect === document.activeElement;
+
   
-    // Clear the locationSelect dropdown
-    locationSelect.innerHTML = '';
+    if (!isLocationSelectEvent) {
+      // Clear the locationSelect dropdown
+      locationSelect.innerHTML = '';
   
-    // Add an 'All Locations' option
-    const allOption = document.createElement("option");
-    allOption.value = "all";
-    allOption.text = "----";
-    locationSelect.add(allOption);
+      // Add an 'All Locations' option
+      const allOption = document.createElement("option");
+      allOption.value = "all";
+      allOption.text = "----";
+      locationSelect.add(allOption);
   
-    // Add the filtered locations
-    filtered3.forEach((loc) => {
-      const option = document.createElement("option");
-      option.value = loc;
-      option.text = loc;
-      locationSelect.add(option);
-    });
+      // Add the filtered locations
+      filtered3.forEach((loc) => {
+        const option = document.createElement("option");
+        option.value = loc;
+        option.text = loc;
+        locationSelect.add(option);
+      });
+    } else {
+      // Set the selected location in the dropdown
+      locationSelect.value = selectedLocation;
+    }
   
     const deez = document.getElementById("deez");
     deez.innerHTML = `Details: ${locationDetails.lat}, ${locationDetails.lng}, ${locationDetails.type}, ${locationDetails.price}, ${locationDetails.party}`;
