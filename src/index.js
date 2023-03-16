@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
     const opts = document.querySelectorAll("select");
   
     for (let i = 0; i < opts.length; i++) {
@@ -252,6 +252,5 @@ function initMap() {
       );
     }
   }
-  // Initialize the map when the DOM is loaded
   initMap();
-});  
+};  
