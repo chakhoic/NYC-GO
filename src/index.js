@@ -130,6 +130,12 @@ function initMap() {
       );
     }
   }
+  const closeBtn = document.querySelector(".close");
+  closeBtn.addEventListener("click", () => {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+  });
+  
   initMap();
 
 };  
