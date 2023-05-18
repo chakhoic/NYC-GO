@@ -4,13 +4,6 @@ import { partyFilter } from "./scripts/partyfilter.js";
 import { details } from "./scripts/details.js";
 
 window.onload = () => {
-    const opts = document.querySelectorAll("select");
-  
-    for (let i = 0; i < opts.length; i++) {
-        opts[i].addEventListener("change", () => {
-          initMap();
-        });
-      }    
 
 function initMap() {
     // Map init
